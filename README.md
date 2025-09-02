@@ -1,7 +1,20 @@
 # IDS706_Data-Engineering_Week1
 [![Python Template for IDS706](https://github.com/mingjie-wei/IDS706_Data-Engineering_Week1/actions/workflows/main.yml/badge.svg)](https://github.com/mingjie-wei/IDS706_Data-Engineering_Week1/actions/workflows/main.yml)
 
-## First Approach: Cloud-based Containerized Setup Workflow (With Dev Container)
+
+## Approach: Local Setup Workflow
+
+### Clone the project in Terminal
+```bash
+cd ~/Desktop
+git clone https://github.com/mingjie-wei/IDS706_Data-Engineering_Week1.git
+```
+
+### Open the project with VS Code
+```bash
+cd IDS706_Data-Engineering_Week1  # Enter the folder I just cloned
+code .                            # Open the current directory with VS Code
+```
 
 ### Create new files in the repository
 ```bash
@@ -9,6 +22,14 @@ touch Makefile
 touch hello.py
 touch test_hello.py
 touch requirements.txt
+```
+
+### Setup Python Environment (if you're not using a Dev Container)
+If you're working outside of a dev container, you can manually create and activate a virtual environment. If you do so, for consistency, it's recommended to name the environment the same as your repository.
+
+```bash
+python3 -m venv ~/.IDS706_Data-Engineering_Week1
+source ~/.IDS706_Data-Engineering_Week1/bin/activate
 ```
 
 ### Create a Makefile
@@ -42,6 +63,12 @@ click
 black
 pytest-cov
 ```
+
+### VS Code Dev Containers (Suggested)
+Open a sample in a container by pressing shift+command+P, then select `Dev Containers: Add Development Container Configuration Files...`. Choose the Python 3.11 template, and it will create the necessary files for you.
+
+#### Rebuild or update your container
+after you make changes to your container, such as installing a packages, you'll rebuild your container for your changes to take effect. by pressing shift+command+P, then select `Dev Containers: Rebuild Container` or `Codespaces: Rebuild Container` command so the modifications are picked up.  
 
 ### Run the Makefile
 ```bash 
@@ -94,7 +121,7 @@ make lint
 make clean
 ```
 
-### Commit and push your changes via commands
+### Commit and push your changes via commands or User Interface
 ```bash
 git add .
 git commit -m "Initial commit with Python template setup"   
@@ -144,6 +171,3 @@ jobs:
 1. Go to the "Actions" tab in your repository.
 2. You should see the workflow running.
 3. Click on the latest workflow run to see the details.
-
-
-## Second Approach: Local Setup Workflow
